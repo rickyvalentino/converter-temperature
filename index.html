@@ -5,21 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Tempperature Converter </title>
-    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1> Temperature Converter </h1>
+
+    <h2> Convert Celcius </h2>
     <input id="input" type="number" placeholder=""> 
     <button id="btn" onclick="btnFunction()"> Convert </button> 
-
+    
     <h3> Celcius    : <span id="Celcius"></span></h3>
     <h3> Farenheit  : <span id="Farenheit"></span></h3>
     <h3> Kelvin     : <span id="Kelvin"></span></h3>
+
+    <h2> Convert Farenheit </h2>
+    <input id="input2" type="number" placeholder=""> 
+    <button id="btn" onclick="btnFunction2()"> Convert </button> 
+    
+    <h3> Celcius    : <span id="Celcius2"></span></h3>
+    <h3> Farenheit  : <span id="Farenheit2"></span></h3>
+    <h3> Kelvin     : <span id="Kelvin2"></span></h3>
+
+    <h2> Convert Kelvin </h2>
+    <input id="input3" type="number" placeholder=""> 
+    <button id="btn" onclick="btnFunction3()"> Convert </button> 
+    
+    <h3> Celcius    : <span id="Celcius3"></span></h3>
+    <h3> Farenheit  : <span id="Farenheit3"></span></h3>
+    <h3> Kelvin     : <span id="Kelvin3"></span></h3>
 
     <script>
         function btnFunction(){
             var input = document.getElementById("input").value;
             var celcius = input;
+
             var farenheit = (input*1.8) + 32;
             var kelvin = parseInt(input) + 273.15;
 
@@ -29,6 +48,35 @@
 
             document.getElementById("Kelvin").innerHTML += kelvin + " Kelvin";
         }
+
+        function btnFunction2(){
+            var input2 = document.getElementById("input2").value;
+            var farenheit2 = input2;
+
+            var celcius2 = (input2-32)/1.8;
+            var kelvin2 = parseInt((input2-32)/1.8) + 273.15;
+
+            document.getElementById("Celcius2").innerHTML += celcius2 + " Celcius";
+
+            document.getElementById("Farenheit2").innerHTML += farenheit2 + " Farenheit";
+
+            document.getElementById("Kelvin2").innerHTML += kelvin2 + " Kelvin";
+        }
+
+        function btnFunction3(){
+            var input3 = document.getElementById("input3").value;
+            var kelvin3 = input3;
+
+            var celcius3 = input3-273.15;
+            var farenheit3 = ((input3-273.15)*1.8)+32;
+
+            document.getElementById("Celcius3").innerHTML += celcius3 + " Celcius";
+
+            document.getElementById("Farenheit3").innerHTML += farenheit3 + " Farenheit";
+
+            document.getElementById("Kelvin3").innerHTML += kelvin3 + " Kelvin";
+        }
+
     </script>
 </body>
 </html>
